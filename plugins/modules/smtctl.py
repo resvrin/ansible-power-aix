@@ -113,7 +113,7 @@ def get_smt_state(module):
             line_out = line.strip().split()
             try:
                 if "proc" in line_out[0] and int(line_out[2]) > 1:
-                    #Value greater than 1 is SMT Enabled
+                    # Value greater than 1 is SMT Enabled
                     present_value = int(line_out[2])
                     break
             except IndexError as ex:
@@ -136,7 +136,7 @@ def smt_set(module):
     opts = ""
 
     if smt_value and chtype and not smt_limit:
-        opts += "-t %s -w %s" % (smt_value,chtype)
+        opts += "-t %s -w %s" % (smt_value, chtype)
 
     elif smt_value and smt_limit:
         opts +=  "-m %s -t %s" % (smt_limit, smt_value)
@@ -145,7 +145,7 @@ def smt_set(module):
         opts += "-t %s" % (smt_value)
 
     elif smt_extra:
-        opts += "-m %s" % smt_extra
+        opts += "-m %s" % (smt_extra)
 
     elif smt_state == "enabled":
         opts += "-m on"
@@ -168,10 +168,7 @@ def smt_set(module):
         msg = "Command Executed Successfully cmd: %s" % cmd
         return True, msg
 
-
-
-
-
+      
 def run_bosboot(module):
     """ Running bosboot the changes to take effect on subsequent reboots """
 
