@@ -88,11 +88,11 @@ EXAMPLES = r'''
 RETURN = r'''
 description: "Output On Debug"
 msg:
-    "bos_changed": true,
-    "bos_message": "Command Executed Successfully output- '\nbosboot: Boot image is 61468 512 byte blocks.\n'",
-    "changed": true,
-    "failed": false,
-    "msg": "Command Executed Successfully cmd: smtctl -t 8"
+    bos_changed: true
+    bos_message: "Command Executed Successfully output- '\nbosboot: Boot image is 61468 512 byte blocks.\n'"
+    changed: true
+    failed: false
+    msg: "Command Executed Successfully cmd: smtctl -t 8"
 
 '''
 
